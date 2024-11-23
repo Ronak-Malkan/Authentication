@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.authButtons {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.authButtons:hover {
+    background-color: #777;
+}
+
+.authButtons.logout {
+    background-color: #d9534f;
+}
+
+.authButtons.logout:hover {
+    background-color: #c9302c;
+}
