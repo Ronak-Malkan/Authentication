@@ -7,6 +7,7 @@ export const Auth0ProviderWithWrapper = ({ children }) => {
   const domain = process.env.REACT_APP_AUTH0_DOMAIN;
   const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
   const redirectUri = process.env.REACT_APP_AUTH0_CALLBACK_URL;
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
   console.log(domain, clientId, redirectUri);
 
@@ -24,6 +25,7 @@ export const Auth0ProviderWithWrapper = ({ children }) => {
       clientId={clientId}
       authorizationParams={{
         redirect_uri: redirectUri,
+        audience: audience,
       }}
       onRedirectCallback={onRedirectCallback}
     >
