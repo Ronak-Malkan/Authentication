@@ -1,19 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const userRoutes = require('./api/userRoutes');
+const addRoutes = require('./api/addUserRoute');
+const updateRoutes = require('./api/updateUserRoute');
 const { validateAccessToken } = require('./middleware/authMiddleware');
 const { errorHandler } = require('./middleware/errorMiddleWare');
+const cors = require('cors');
 
 const app = express();
 
-// Middleware to parse JSON bodies
+app.use(cors());
 app.use(bodyParser.json());
 
-// Use Auth middleware on all routes
+app.use('/api/users', addRoutes);
+
 app.use(validateAccessToken);
 
-// Routes
-app.use('/api/users', userRoutes);
+app.use('/api/users', updateRoutes);
 
 app.use(errorHandler);
 
